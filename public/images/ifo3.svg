@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="Group_722" data-name="Group 722" transform="translate(-1092 -807)">
+        <g id="Group_605" data-name="Group 605">
+            <g id="Rectangle_91" data-name="Rectangle 91" transform="translate(1092 807)" style="stroke:#fff;stroke-width:1.8px;fill:none">
+                <rect width="25" height="25" rx="5" style="stroke:none"/>
+                <rect x=".9" y=".9" width="23.2" height="23.2" rx="4.1" style="fill:none"/>
+            </g>
+            <rect id="Rectangle_92" data-name="Rectangle 92" class="cls-2" width="13" height="2" rx="1" transform="translate(1103 814)"/>
+            <rect id="Rectangle_93" data-name="Rectangle 93" class="cls-2" width="13" height="2" rx="1" transform="translate(1103 819)"/>
+            <rect id="Rectangle_94" data-name="Rectangle 94" class="cls-2" width="9" height="2" rx="1" transform="translate(1107 824)"/>
+        </g>
+    </g>
+</svg>
