@@ -109,7 +109,7 @@ const fetchFarms = async () => {
         },
         {
           address: getMasterChefAddress(),
-          name: 'wisteriaSwapPerBlock',
+          name: 'buzzPerBlock',
         },
       ])
 

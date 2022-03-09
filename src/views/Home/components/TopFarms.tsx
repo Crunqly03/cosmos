@@ -73,7 +73,7 @@ const TopFarms: React.FC<FarmsProps> = (farmsProps) => {
   )
 
   const sliderSettings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 250,
     slidesToShow: 5,
@@ -88,7 +88,7 @@ const TopFarms: React.FC<FarmsProps> = (farmsProps) => {
           slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
-          dots: false,
+          dots: true,
         },
       },
       {
@@ -97,7 +97,7 @@ const TopFarms: React.FC<FarmsProps> = (farmsProps) => {
           slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
-          dots: false,
+          dots: true,
         },
       },
       {
@@ -112,16 +112,18 @@ const TopFarms: React.FC<FarmsProps> = (farmsProps) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
+          
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
+          
         },
       },
     ],
@@ -129,8 +131,29 @@ const TopFarms: React.FC<FarmsProps> = (farmsProps) => {
 
   return (
     <>
-      <div className="text-2xl font-bold mb-2"> </div>
+      <div className="text-2xl text-white text-center font-bold mb-2">Top Farms</div>
       <Slider {...sliderSettings}>{farmsList(activeFarms, false)}</Slider>
+      
+      
+            
+        {/* <ul className="slick-dots" style={{display:"block"}}>
+          <li className="">
+            <button type='button'>1</button>
+          </li>
+          <li className="">
+            <button type='button'>2</button>
+          </li>
+          <li className="">
+            <button type='button'>3</button>
+          </li>
+          <li className="">
+            <button type='button'>4</button>
+          </li>
+          <li className="">
+            <button type='button'>5</button>
+          </li>
+        </ul> */}
+        
     </>
   )
 }

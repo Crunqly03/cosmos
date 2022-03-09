@@ -1,23 +1,23 @@
 export default {
   cake: {
-    56: '0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7',
-    97: '0x482AAE2B58De0A684c3c6B192ED66dF348801A3c',
+    56: '',
+    97: '0xC14542fbC96f88E8c3982D26326b0691D7CE9c53',
   },
   rbs: {
-    56: '0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7',
-    97: '0x482AAE2B58De0A684c3c6B192ED66dF348801A3c',
+    56: '',
+    97: '0xC14542fbC96f88E8c3982D26326b0691D7CE9c53',
   },
   masterChef: {
-    56: '0x5865C60C05C28C597b3CEB6a84809251101E5204',
-    97: '0xec1ba003E6Af1A31efb9288C8425FcE821b47c19',
+    56: '',
+    97: '0xE4833FCc36F9Bc756532EbaE64b3adf5DeC22999',
   },
 
   lockedsale:{
-    56:'0xD93F894A3E52be70DBfFFA9F9252bD56b2b69423',
+    56:'',
     97:'0xa2f3B8935836cf6C6452Dd20D7EdCEC83C39ad4e'
   },
   wbnb: {
-    56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    56: '',
     97: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
   },
   lottery: {
@@ -29,11 +29,11 @@ export default {
     97: '',
   },
   mulltiCall: {
-    56: '0x1ee38d535d541c55c9dae27b12edf090c608e6fb',
+    56: '',
     97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
   },
   busd: {
-    56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    56: '',
     97: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
   },
   btcb: {

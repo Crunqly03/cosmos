@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract WisteriaToken",
-        "name": "_wisteriaSwap",
+        "internalType": "contract IBuzz",
+        "name": "_buzz",
         "type": "address"
       },
       {
@@ -13,7 +13,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_wisteriaSwapPerBlock",
+        "name": "_buzzPerBlock",
         "type": "uint256"
       }
     ],
@@ -125,31 +125,6 @@
       },
       {
         "indexed": true,
-        "internalType": "address",
-        "name": "referrer",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "commissionAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "ReferralCommissionPaid",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": true,
         "internalType": "uint256",
         "name": "pid",
         "type": "uint256"
@@ -216,19 +191,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "MAXIMUM_REFERRAL_COMMISSION_RATE",
-    "outputs": [
-      {
-        "internalType": "uint16",
-        "name": "",
-        "type": "uint16"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -259,6 +221,32 @@
     "name": "add",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "buzz",
+    "outputs": [
+      {
+        "internalType": "contract IBuzz",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "buzzPerBlock",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -296,11 +284,7 @@
         "internalType": "uint256",
         "name": "_amount",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_referrer",
-        "type": "address"
+      
       }
     ],
     "name": "deposit",
@@ -372,6 +356,50 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_pid",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPoolInfo",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "lpToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "allocPoint",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastRewardBlock",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "accBuzzPerShare",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint16",
+        "name": "depositFeeBP",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "harvestInterval",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "massUpdatePools",
     "outputs": [],
@@ -404,7 +432,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingWisteria",
+    "name": "pendingBuzz",
     "outputs": [
       {
         "internalType": "uint256",
@@ -442,7 +470,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accWisteriaPerShare",
+        "name": "accBuzzPerShare",
         "type": "uint256"
       },
       {
@@ -453,6 +481,11 @@
       {
         "internalType": "uint256",
         "name": "harvestInterval",
+        "type": "uint256"
+      },
+      {
+        "internalType": "totalLp",
+        "name": "",
         "type": "uint256"
       }
     ],
@@ -467,19 +500,6 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "referralCommissionRate",
-    "outputs": [
-      {
-        "internalType": "uint16",
-        "name": "",
-        "type": "uint16"
       }
     ],
     "stateMutability": "view",
@@ -551,32 +571,7 @@
     "stateMutability": "nonpayable",
     "type": "function"
   },
-  {
-    "inputs": [
-      {
-        "internalType": "uint16",
-        "name": "_referralCommissionRate",
-        "type": "uint16"
-      }
-    ],
-    "name": "setReferralCommissionRate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "contract IWisteriaReferral",
-        "name": "_wisteriaSwapReferral",
-        "type": "address"
-      }
-    ],
-    "name": "setWisteriaReferral",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
+ 
   {
     "inputs": [],
     "name": "startBlock",
@@ -633,7 +628,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_wisteriaSwapPerBlock",
+        "name": "_buzzPerBlock",
         "type": "uint256"
       }
     ],
@@ -694,45 +689,7 @@
     "stateMutability": "view",
     "type": "function"
   },
-  {
-    "inputs": [],
-    "name": "wisteriaSwap",
-    "outputs": [
-      {
-        "internalType": "contract WisteriaToken",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "wisteriaSwapPerBlock",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "wisteriaSwapReferral",
-    "outputs": [
-      {
-        "internalType": "contract IWisteriaReferral",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
+  
   {
     "inputs": [
       {

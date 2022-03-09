@@ -28,8 +28,8 @@ const addToMetamask = function () {
       params: {
         type: 'ERC20',
         options: {
-          address: '0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7',
-          symbol: 'WST',
+          address: '0x95d104b8a6d97820d7c169f1d02489c08958c89d',
+          symbol: 'RV2',
           decimals: 18,
           image: `${window.location.origin}/images/favicons/apple-icon-72x72.png`,
         },
@@ -37,7 +37,7 @@ const addToMetamask = function () {
     })
     .then((success) => {
       if (success) {
-        console.log('WST successfully added to wallet!')
+        console.log('RV2 successfully added to wallet!')
       } else {
         throw new Error('Something went wrong.')
       }
@@ -52,13 +52,13 @@ const Statistics = () => {
   const farms = useFarms()
   const eggPrice = usePriceCakeBusd()
   const bnbPrice = usePriceBnbBusd()
-  const exacutedBalance= useCustomTokenBalance("0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7","0xf808b408e464FcaA2a28C673ca7F5C16f6e775aB")
-  const circSupply = totalSupply ? totalSupply.minus(burnedBalance).minus(exacutedBalance) : new BigNumber(0)
+  const exacutedBalance= useCustomTokenBalance("0x95d104b8a6d97820d7c169f1d02489c08958c89d","0x75DE0CA3C366bF3c341f36edFa684e005297b0D3")
+  const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
   const cakeSupply = getBalanceNumber(circSupply)
 
   const marketCap = eggPrice.times(circSupply)
 
-  const autoApy = useAutoFarmApy(2)
+  const autoApy = useAutoFarmApy(1)
   let eggPerBlock = 0
   if (farms && farms[0] && farms[0].eggPerBlock) {
     eggPerBlock = new BigNumber(farms[0].eggPerBlock)
@@ -95,102 +95,98 @@ const Statistics = () => {
   })
 
   return (
-    <div className="stat-card h-full  text-white text-center   grid  grid-cols-1 gap-4 justify-item-center ">
-      <div className="grid   sm:grid-cols-1  text-lg md:grid-cols-2  lg:grid-cols-3   ">
-
-
-
-        <div className="grid grid-cols-2  gap-2 ">
-          <div className="grid grid-cols-1 md:ml-20 lg:ml-0 text-left">
-            <div>WST APY</div>
-            <div>Total Supply</div>
-            <div>Circulation Supply</div>
-
+    <div className="grid grid-cols-1">
+      <div className="mb-80 text-4xl text-center text-white">
+        Explore the life you want to live. 
+        <br/>
+        Put your crypto to work
+      </div>
+      <div className="statistics h-full  text-white text-center   grid  grid-cols-1 gap-4 justify-item-center " style={{minWidth:"450px"}}>
+        <div className="grid   grid-cols-2 lg:grid-cols-3     text-lg ">
+          <div className="grid grid-cols-1  gap-2 ">
+            <div className="grid grid-cols-1 md:ml-20 lg:ml-0 text-left">
+              <div>RV2 APY</div>
+              <div>Total Supply</div>
+              <div>Circulation Supply</div>
+              <div>Total Burned</div>
+              <div>Market Cap</div>
+              <div>RV2 Per Block</div>
+            </div>
           </div>
+          <div className="grid grid-cols-2  gap-2 ">
+            <div className="grid grid-cols-1 md:mr-20 lg:mr-0 text-center ">
+              <div>
+                {!Number.isNaN(autoApy) ?
+                <Flex justifyContent="center">
 
-          <div className="grid grid-cols-1 md:mr-20 lg:mr-0 text-center ">
-            <div>
-              {!Number.isNaN(autoApy) ?
-              <Flex justifyContent="center">
+                  <CardValue  fontSize="17px" color="white" value={autoApy} decimals={0}/>
 
-                <CardValue  fontSize="17px" value={autoApy} decimals={0}/>
+                  <Text bold fontSize="17px" color="white">%</Text>
+                </Flex>
+                :
+                <Text bold fontSize="17px" color="white">
+                  0
+                </Text>
+                }
 
-                <Text bold fontSize="17px" color="primary">%</Text>
-              </Flex>
-              :
-              <Text bold fontSize="17px" color="primary">
-                0
-              </Text>
-              }
-
-            </div>
-            <div>
-              {' '}
-              {cakeSupply && (
-                <CardValue fontSize="17px" value={getBalanceNumber(totalSupply)} decimals={0} />
-              )}
-            </div>
-            <div>
-              {cakeSupply && (
-                <CardValue fontSize="17px" value={cakeSupply} decimals={0} />
-              )}
-            </div>
-
-
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2  gap-2 ">
-        <div className="grid grid-cols-1 md:ml-20 lg:ml-0 text-left">
-
-            <div>Total Burned</div>
-            <div>Market Cap</div>
-            <div>WST Per Block</div>
-          </div>
-
-          <div className="grid grid-cols-1 md:mr-20 lg:mr-0 text-center ">
-
-            <div>
-              <CardValue
-                fontSize="17px"
-                value={getBalanceNumber(burnedBalance)}
-                decimals={0}
-              />
-            </div>
-            <div>
-              {totalSupply && (
+              </div>
+              <div>
+                {' '}
+                {cakeSupply && (
+                  <CardValue fontSize="17px" color="white" value={getBalanceNumber(totalSupply)} decimals={0} />
+                )}
+              </div>
+              <div>
+                {cakeSupply && (
+                  <CardValue fontSize="17px" color="white" value={cakeSupply} decimals={0} />
+                )}
+              </div>
+              <div>
                 <CardValue
                   fontSize="17px"
-                  value={getBalanceNumber(marketCap)}
+                  color="white"
+                  value={getBalanceNumber(burnedBalance)}
                   decimals={0}
-                  prefix='$'
                 />
-              )}
-            </div>
-            <div>
-              <Text bold fontSize="17px" color="primary">
-                {eggPerBlock}
-              </Text>
+              </div>
+              <div>
+                {totalSupply && (
+                  <CardValue
+                    fontSize="17px"
+                    color="white"
+                    value={getBalanceNumber(marketCap)}
+                    decimals={0}
+                    prefix='$'
+                  />
+                )}
+              </div>
+              <div>
+                <Text bold fontSize="17px" color="white">
+                  {eggPerBlock}
+                </Text>
+              </div>
+
+
             </div>
           </div>
-        </div>
-        <div className='grid'>
-        <div> </div>
-            <Flex flexDirection="column" alignItems="center">
+          <div className='grid'>
+          <div> </div>
+              <Flex flexDirection="column" alignItems="center">
 
-            <Flex alignItems="center">
-               <img style={{minWidth:"60px",width:"70px"}} src="/images/metamask-ico.svg" alt="rbs-ico" />
-               <button type='button' style={{minWidth:"135px"}} className="bg-gray-800 bg-transparent ml-4 py-3   rounded-xl sm:mt-2  lg:mt-1 text-sm  text-white cursor-pointer hover:opacity-75" onClick={addToMetamask}>
-                Add to Metamask
-              </button>
-            </Flex>
-            </Flex>
-            <div> </div>
+              <Flex alignItems="center">
+                <img style={{minWidth:"60px",width:"70px"}} src="/images/metamask-ico.svg" alt="rbs-ico" />
+                <button type='button' style={{minWidth:"135px"}} className="bg-greenmain bg-transparent ml-4 py-3   rounded-xl sm:mt-2  lg:mt-1 text-sm  text-white cursor-pointer hover:opacity-75" onClick={addToMetamask}>
+                  Add to Metamask
+                </button>
+              </Flex>
+              </Flex>
+              <div> </div>
+          </div>
         </div>
+
+
+
       </div>
-
-
-
     </div>
   )
 }

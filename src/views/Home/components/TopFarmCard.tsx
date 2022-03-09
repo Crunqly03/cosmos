@@ -50,26 +50,31 @@ const TopFarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPri
     : '-'
 
   return (
-    <div className="grid  grid-cols-4">
-       <Image
-        src={`/images/farms/${farmImage}.png`}
-        alt={farmImage}
-        width={55}
-        height={55}
-        marginTop="5px"
-        marginBottom="15px"
-      />
-       <div className="text-white mb-4">{farm.tokenSymbol}
-       <CardValue
-            fontSize="18px"
-            value={100}
-            decimals={0}
-            prefix="$"
-          />
-        </div>
+    <div className="bg-gray-50 mx-1 xs:mx-1 sm:mx-2 rounded-3xl shadow-sm p-5 flex flex-col items-center justify-around">
+      <div className="self-end"><div className="bg-secondary text-white px-6 py-1 text-sm text-center rounded-3xl">Hot</div>
+    </div>
+    <Image
+      src={`/images/farms/${farmImage}.png`}
+      alt={farmImage}
+      width={55}
+      height={55}
+      marginTop="5px"
+      marginBottom="15px"
+    />
+    <div className="font-bold text-md mb-2">{farm.tokenSymbol}</div>
+    <div className="text-gray-400 text-sm mb-1">Liquidity ${Number(QuoteToken.CAKE)}</div> 
+    <div className="text-primary font-bold text-lg">{farmAPY}% APR</div>
+    <a className="bg-green2 px-16 py-2 rounded-3xl text-white cursor-pointer hover:opacity-75 mt-5" href="/farms">Farm</a>
+      
+    {/* <CardValue
+      fontSize="18px"
+      value={100}
+      decimals={0}
+      prefix="$"/> */}
+    </div>
        
           
-        </div>
+        
     
     
     

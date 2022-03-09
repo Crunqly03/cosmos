@@ -4,17 +4,18 @@ import { FarmConfig, QuoteToken } from './types'
 const farms: FarmConfig[] = [
 
   {
-    pid: 0,
+    pid: 4,
     risk: 5,
-    lpSymbol: 'WST-BUSD LP',
+    lpSymbol: 'WST',
+    isTokenOnly: true,
     lpAddresses: {
-      97: '',
-      56: '0x7bf33458a7d077ea5aa67313e329741dd130a9ef',
+      97: '0x3C26Cfb92fC1AA40B9eB81534CDFE9Ed4944462f',
+      56: '',
     },
     tokenSymbol: 'WST',
     tokenAddresses: {
-      97: '',
-      56: '0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7',
+      97: '0xC14542fbC96f88E8c3982D26326b0691D7CE9c53',
+      56: '',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -24,51 +25,82 @@ const farms: FarmConfig[] = [
     risk: 5,
     lpSymbol: 'WST-BNB LP',
     lpAddresses: {
-      97: '',
-      56: '0x4e37c7ab77a9357ad5ba87a949dcadeb0af6cb6a',
+      97: '0xb37aF8fF25552fDC405a93C2A893D383C019161A',
+      56: '',
     },
     tokenSymbol: 'WST',
     tokenAddresses: {
-      97: '',
-      56: '0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7',
+      97: '0xC14542fbC96f88E8c3982D26326b0691D7CE9c53',
+      56: '',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
   },
-    {
-   pid: 2,
-   risk: 5,
-   isTokenOnly: true,
-   lpSymbol: 'WST',
-   lpAddresses: {
-     97: '',
-     56: '0x7bf33458a7d077ea5aa67313e329741dd130a9ef', // EGG-BUSD LP
-   },
-   tokenSymbol: 'WST',
-   tokenAddresses: {
-     97: '',
-     56: '0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7',
-   },
-   quoteTokenSymbol: QuoteToken.BUSD,
-   quoteTokenAdresses: contracts.busd,
-   isAutoVault:true,
-  },
   {
-  pid: 3,
-  risk: 3,
-  lpSymbol: 'BNB-BUSD LP',
-  lpAddresses: {
-  97: '',
-  56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
-  },
-  tokenSymbol: 'BNB',
-  tokenAddresses: {
-  97: '',
-  56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
-  },
-  quoteTokenSymbol: QuoteToken.BUSD,
-  quoteTokenAdresses: contracts.busd,
-  },
+    pid: 2,
+    risk: 5,
+    lpSymbol: 'BNB-BUSD LP',
+    lpAddresses: {
+    97: '0xe0e92035077c39594793e61802a350347c320cf2',
+    56: '',
+    },
+    tokenSymbol: 'BNB',
+    tokenAddresses: {
+    97: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+    56: '',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+    },
+    {
+      pid: 3,
+      risk: 5,
+      lpSymbol: 'WST-BUSD LP',
+      lpAddresses: {
+      97: '0x3C26Cfb92fC1AA40B9eB81534CDFE9Ed4944462f',
+      56: '',
+      },
+      tokenSymbol: 'WST',
+      tokenAddresses: {
+      97: '0xC14542fbC96f88E8c3982D26326b0691D7CE9c53',
+      56: '',
+      },
+      quoteTokenSymbol: QuoteToken.BUSD,
+      quoteTokenAdresses: contracts.busd,
+      },
+  //   {
+  //  pid: 2,
+  //  risk: 5,
+  //  isTokenOnly: true,
+  //  lpSymbol: 'WST',
+  //  lpAddresses: {
+  //    97: '',
+  //    56: '0x7bf33458a7d077ea5aa67313e329741dd130a9ef', // EGG-BUSD LP
+  //  },
+  //  tokenSymbol: 'WST',
+  //  tokenAddresses: {
+  //    97: '',
+  //    56: '0xaAdFf17d56d80312b392Ced903f3E8dBE5c3ece7',
+  //  },
+  //  quoteTokenSymbol: QuoteToken.BUSD,
+  //  quoteTokenAdresses: contracts.busd,
+  //  isAutoVault:true,
+  // },
+  // pid: 3,
+  // risk: 3,
+  // lpSymbol: 'BNB-BUSD LP',
+  // lpAddresses: {
+  // 97: '',
+  // 56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
+  // },
+  // tokenSymbol: 'BNB',
+  // tokenAddresses: {
+  // 97: '',
+  // 56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+  // },
+  // quoteTokenSymbol: QuoteToken.BUSD,
+  // quoteTokenAdresses: contracts.busd,
+  // },
 
   //  {
   //   pid: 21,

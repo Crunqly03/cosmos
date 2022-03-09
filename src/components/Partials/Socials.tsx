@@ -13,8 +13,25 @@ const icons = [
 
 const Socials = () => {
   return (
+   
+    
     <div className="flex items-center justify-start">
-      <div className="dropdown  inline-block relative">
+     
+      <a href="https://blokfield.gitbook.io/robiniaswap-v2/" target="_blank" rel="noreferrer" className=" h-12 w-12 flex justify-center items-center rounded-xl mr-2 hover:opacity-80 shadow-sm">
+        <img src="/images/gitbook.svg" alt="gitbook" width="32px" style={{minWidth: "32px"}}/>
+      </a>
+      <a href="https://t.me/officialrobinia" target="_blank" rel="noreferrer" className=" h-12 w-12 flex justify-center items-center rounded-xl mr-2 hover:opacity-80 shadow-sm">
+        <img src="/images/telegram.svg" alt="telegram" width="32px" style={{minWidth: "32px"}}/>
+      </a>
+      <a href="https://twitter.com/robiniaswap" target="_blank" rel="noreferrer" className=" h-12 w-12 flex justify-center items-center rounded-xl mr-2 hover:opacity-80 shadow-sm">
+        <img src="/images/twit.svg" alt="twit" width="32px" style={{minWidth: "32px"}}/>
+      </a>
+      <a href="https://discord.gg/yEFKUsEsaj" target="_blank" rel="noreferrer" className=" h-12 w-12 flex justify-center items-center rounded-xl mr-2 hover:opacity-80 shadow-sm">
+        <img src="/images/discord.svg" alt="discord" width="32px" style={{minWidth: "32px"}}/>
+      </a>
+    </div>
+
+      /* <div className="dropdown  inline-block relative">
     <button type="submit" className=" font-semibold   rounded inline-flex items-center">
     <span>
     <a href="/" target="_blank" rel="noreferrer" className="socialbg primary  w-7 flex justify-center items-center rounded-xl mr-2 mt-1 hover:opacity-80 shadow-sm">
@@ -55,7 +72,7 @@ const Socials = () => {
         )
       })}
 
-    </div>
+    </div> */
 
   )
 }

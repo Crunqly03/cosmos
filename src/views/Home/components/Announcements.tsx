@@ -4,9 +4,10 @@ import { Timeline } from 'react-twitter-widgets'
 const Announcements = () => {
   return (
     <>
-      <div className="text-2xl text-white mb-2 ">Announcements</div>
+      
 
-    <div className="stat-card relative xxxl ">
+    <div className="farmstaking relative h-full ">
+      <div className="text-2xl text-greenmain font-bold mb-6">Announcements</div>
       
            <Timeline
             dataSource={{
@@ -14,7 +15,7 @@ const Announcements = () => {
             screenName: 'robiniaswap',
           }}
           options={{
-            height: '327',
+            height: '300',
             chrome: 'noheader, nofooter  , noborders , noscrollbar',
             width: '100%',
 

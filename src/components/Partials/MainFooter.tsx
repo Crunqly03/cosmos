@@ -97,11 +97,10 @@ const MainFooter = () => {
 
   return (
 
-      <div className="stat-card grid grid-cols-4  gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 text-left text-lg text-white ">
-      
-      <div className='sm:col-span-2 md:col-span-1'>
-      <img  src="/images/footerlogo.png"  alt="rbs-ico" className='mt-10 sm:mr-0' />
-      </div>
+      <div className="mainfooter grid grid-cols-4  gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 text-left text-lg text-white ">
+        <div className='sm:col-span-2 md:col-span-1'>
+          <img  src="/images/robinia.png"  alt="rbs-ico" className="" style={{minWidth: "140px", maxWidth: "140px"}} />
+        </div>
         <div className="grid text-gray-400 grid-cols-1 ml-10">
           <div className="text-white ">About</div>
           <a href="https://blokfield.gitbook.io/wisteria-swap/">Docs</a>
@@ -113,7 +112,8 @@ const MainFooter = () => {
 
         <div className="grid grid-cols-1 text-gray-400">
           <div className="text-white ">Products</div>
-          <div><a href="/stake">Stake(3,3)</a></div>
+          <div>Stake(3,3)</div>
+          {/* <div><a href="/stake">Stake(3,3)</a></div> */}
           <div><a href="/calloption">Call Options</a></div>
           <div><a href="/ifo">IFO</a> </div>
           <div> </div>

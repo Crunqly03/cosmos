@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Khand', sans-serif;
   }
   body {
-    background-image: url(${secondary}),url(${backgrnd});
+    background-image: url(${backgrnd});
     background-attachment: local ,local ;
     background-position: 0px 0px , 100px 0px  ;
     background-size:cover;
@@ -28,6 +28,13 @@ const GlobalStyle = createGlobalStyle`
   .rbs-bg {
     background: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(20px);
+  }
+
+  .slidbg {
+    background-image: url(/images/slider1.ba7c4778.png);
+    background-size: cover;
+    border-radius: 30px;
+    height: 100%;
   }
 
   .solofarmcard {
@@ -98,6 +105,26 @@ const GlobalStyle = createGlobalStyle`
     height:105px;
   }
 
+  .farmstaking{
+    background: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 30px;
+    backdrop-filter:blur(45px);
+
+    box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 20px;
+    margin-left: 6px;
+    margin-right: 6px;
+    
+  }
+
+  .statistics{
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 30px;
+    
+  }
+
   .stat-card{
     background: rgba(255, 255, 255, 0.01);
     padding: 24px;
@@ -163,7 +190,19 @@ const GlobalStyle = createGlobalStyle`
     
   }
 
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
   .rbs-card {
+    background-image: url(/images/rbscardbg1.png);
+    backdrop-filter: blur(45px);
+    padding: 25px;
+    border-radius: 30px;
+    box shadow:rgba(0, 0, 0, 0.05) 1px 1px 20px;
+  }
+
+  .rbs-card1 {
     background: rgba(255, 255, 255, 0.15);
     padding: 15px;
     margin-bottom:30px;
@@ -253,6 +292,72 @@ const GlobalStyle = createGlobalStyle`
   .slick-list> div {
     margin-left:0;
   }
+
+  .slick-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;  
+  }
+
+  .slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+  }
+
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slick-slider {
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+    tap-highlight-color: transparent;
+  }
+
+  .h-128 {
+    height: 26rem;
+    }
+
+  .col-start-2 {
+    grid-column-start: 2;
+  }
+
+  .p-4 {
+    padding: 1rem;
+  }
+
+  .topslider {
+    background: rgb(6, 77, 76);
+    backdrop-filter: blur(45px);
+    height: 100%;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 20px;
+  }
+
+  .slick-dots li, .slick-dots li button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0;
+  }
+
 `
 
 export default GlobalStyle

@@ -25,25 +25,37 @@ const Home: React.FC = () => {
     <Page >
     <div >
      
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-12">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-12 gap-8">
 
-          <div className="col-span-12 ">
-            <TopSocials />
+          <div className="col-span-12 lg:mb-96">
+            <div>
+              <div className="grid grid-cols-2">
+                <div className=" text-white text-4xl  md:mt-80  mb-8 text-left place-content-center  gap-4">
+                  Explore the life you want to live. 
+                  <br/>
+                  Put your crypto to work</div> 
+                 </div>
+              <button type="button" className="  bg-green-800 px-12 py-2 rounded-3xl text-lg text-white  ">
+                <div>Review</div>
+
+              </button>
+            {/* <TopSocials /> */}
+            </div>
           </div>
-          <div className="col-span-12 mb-10 sm:col-span-12 md:col-span-12 lg:col-span-6">
+          <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 lg:mt-32 ">
             <TopSliderCard />
           </div>
-          <div className="col-span-12  sm:col-span-12 md:col-span-12 lg:col-span-6">
+          <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 lg:mt-32">
             <CakeStats />
           </div>
 
-          <div className="col-span-12  mb-20">
+          {/* <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 lg:mt-32">
             <SlideImage />
+          </div> */}
+          <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 lg:mt-12">
+            <FarmStakingCard />
           </div>
-          <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 m-4">
-            <TrendPost />
-          </div>
-          <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 m-4">
+          <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 lg:mt-12">
             <Announcements />
           </div>
 
@@ -51,19 +63,23 @@ const Home: React.FC = () => {
             <FarmStakingCard />
           </div> */}
 
-          <div className="col-span-12 mb-10 mt-10 col-start-0">
+          {/* <div className="col-span-12 mb-10 mt-10 col-start-0">
             <OurProducts />
-          </div>
+          </div> */}
 
-          <div className="col-span-12  col-start-0">
-          <Divider />
-          </div>
-
-          <div className="col-span-12 mb-16 col-start-0">
-            <Partners />
+          <div className="col-span-12 mb-20 lg:mt-24">
+          <TopFarms />
           </div>
           
-          <div className="col-span-12 mb-16 col-start-0">
+          {/* <div className="col-span-12  col-start-0">
+          <Divider />
+          </div> */}
+
+          {/* <div className="col-span-12 mb-16 col-start-0">
+            <Partners />
+          </div> */}
+          
+          <div className=" lg:col-start-3 col-span-8 mb-20 lg:mt-64">
             <Statistics />
           </div>
 

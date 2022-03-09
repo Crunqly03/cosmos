@@ -67,24 +67,26 @@ const FarmedStakingCard = () => {
   }, [onReward])
 
   return (
-    <div className="rbs-card h-full   grid sm:grid-cols-3 md:grid-cols-3  gap-4 ">
+    <div className="farmstaking h-full relative flex flex-col justify-center">
 
-      <div className="text-md text-purple-900 col-span-2 font-bold mb-6">Farms & Staking</div>
+      <div className="text-2xl font-bold text-greenmain mb-6">Farms & Staking</div>
+      
+      <div className="bg-gray-300 p-2 rounded-xl">
+        <span className="text-greenmain">RV2 to Harvest</span>
+        <CakeHarvestBalance earningsSum={0} />
+        <Label>~${0}</Label>
+      </div>
 
-      <div> </div>
-
-      <div>
-        <div className="grid grid-cols-3 sm:gap-16 md:gap-0  mt-2">
-          <img src="/images/w-token.svg" style={{ maxHeight: 60 , maxWidth:80 }} alt="rbs-ico"  />
-          <div className="max-h-full " >
-         <img src="/images/metamask+.svg" style={{ minHeight: 70 , maxWidth:80 }} alt="rbs-ico"  />
-         </div>
-        </div>
-
-      <div className="mt-4">
+      <div className="mt-2 bg-gray-300 p-2 rounded-xl">
+        <span className="text-greenmain">RV2 in Wallet</span>
+        <CakeWalletBalance cakeBalance={0} />
+        <Label>~${0}</Label>
+      </div>
+      <div className="mt-10 ">
         {account ? (
           <Button
             id="harvest-all"
+            variant="primary"
             disabled={balancesWithValue.length <= 0 || pendingTx}
             onClick={harvestAllFarms}
             fullWidth
@@ -94,30 +96,10 @@ const FarmedStakingCard = () => {
               : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
           </Button>
         ) : (
-          <UnlockButton fullWidth />
+          <UnlockButton variant="primary" fullWidth />
         )}
       </div>
-      </div>
-
-      <div className=" text-white ml-6">
-        <span>Wisteria to Harvest</span>
-        <CakeHarvestBalance earningsSum={0} />
-        <Label>~${0}</Label>
-      </div>
-
-
-      <div className="mt-0 ml-6 text-white">
-        <span>Wisteria in Wallet</span>
-        <CakeWalletBalance cakeBalance={0} />
-        <Label>~${0}</Label>
-      </div>
-
-
-
-
-
-
-
+      
     </div>
 
     // <StyledFarmStakingCard>
